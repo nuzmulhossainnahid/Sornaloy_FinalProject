@@ -34,6 +34,7 @@
                 <h4 class="card-title">Create  Slider</h4>
                 <form class="forms-sample" action="{{ url('edit_sliderConf',$data->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+
                   <div class="form-group">
                     <label for="exampleInputName1">Title</label>
                     <input type="text" class="form-control" name="sliderTitle" value="{{ $data->sliderTitle}}" id="exampleInputName1" >

@@ -17,4 +17,5 @@
     <!-- endinject -->
   <link rel="shortcut icon" href="admin/images/favicon.png" />
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
+
   </head>

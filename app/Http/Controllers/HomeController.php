@@ -20,6 +20,11 @@ class HomeController extends Controller
                 $data = Slider::all();
                 return view('user.home.home',compact('data'));
             }
+            elseif (Auth::user()->usertype=='2')
+            {
+
+                return view('employAdmin.home');
+            }
             else
             {
                 return view('admin.home');
@@ -74,9 +79,23 @@ class HomeController extends Controller
             $data = NidTable::where('NIDNo','=',$NIDNo)
             ->where('DateofBirth','=',$dateofBirth)->first();
 
+
+            $ch=curl_init();
+            curl_setopt($ch,CURLOPT_URL,"http://ip-api.com/json");
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+            $result=curl_exec($ch);
+            $result=json_decode($result);
+
+            if($result->status=='success'){
+                $result;
+                }
+
+
+
+
             if( $data)
             {
-                return view('user.howToApply.apply',compact('data'));
+                return view('user.howToApply.apply',compact('data','result'));
             }
             else{
                 return view('user.howToApply.notfound');
@@ -118,5 +137,10 @@ class HomeController extends Controller
         }
         $data->save();
         return 'Request Send';
+    }
+
+    public function app()
+    {
+        return view('user.howToApply.apply');
     }
 }

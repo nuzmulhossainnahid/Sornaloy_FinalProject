@@ -74,10 +74,16 @@
           </div>
         </div>
         <!-- content-wrapper ends -->
+      </div>
+    </div>
+  </div>
+
 
 
         @include('admin.include.footer')
+
   @include('admin.include.script')
+
 </body>
 
 

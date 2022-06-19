@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use App\Http\Controllers\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/app', [HomeController::class,'app']);
 Route::get('/home', [HomeController::class,'redirect']);
 
 Route::get('/', [HomeController::class,'index']);
@@ -43,6 +44,35 @@ Route::post('/apply_loan_customer', [HomeController::class,'apply_loan_customer'
 Route::post('/apply_loan_request', [HomeController::class,'apply_loan_request']);
 
 
+
+
+
+//Admin
+//Web user
+
+Route::get('/webUserView', [AdminController::class,'webUserView']);
+
+//Employ
+Route::get('/createEmploy', [AdminController::class,'createEmploy']);
+Route::get('/add_employ/{id}', [AdminController::class,'add_employ']);
+Route::post('/create_employ_user/{id}', [AdminController::class,'create_employ_user']);
+Route::get('/listEmploy', [AdminController::class,'listEmploy']);
+
+Route::get('/edit_employ/{id}', [AdminController::class,'edit_employ']);
+Route::get('/delete_employ/{id}', [AdminController::class,'delete_employ']);
+
+Route::post('/edit_employ_user/{id}', [AdminController::class,'edit_employ_user']);
+
+
+//User View
+
+Route::get('/user_view', [AdminController::class,'user_view']);
+
+
+
+
+//Application
+Route::post('/application', [ApplicationController::class,'application']);
 
 
 

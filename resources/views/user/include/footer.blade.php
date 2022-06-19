@@ -5,7 +5,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="footer-logo">
                     <!-- Footer Logo -->
-                    <img src="user/images/ft-logo.png" alt="Borrow - Loan Company Website Templates"> </div>
+                    <img src="user/logo/logo.png" style="height: 70px;width: 300px"> </div>
                 <!-- /.Footer Logo -->
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">

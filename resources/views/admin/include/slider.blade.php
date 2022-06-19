@@ -28,53 +28,59 @@
           </ul>
         </div>
       </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fa fa-home menu-icon"></i>
+          <span class="menu-title">User Control</span>
+        </a>
+      </li>
+
       <li class="nav-item d-none d-lg-block">
         <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
           <i class="fas fa-columns menu-icon"></i>
-          <span class="menu-title">Sidebar Layouts</span>
+          <span class="menu-title">Web User</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="sidebar-layouts">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/layout/compact-menu.html">Compact menu</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-collapsed.html">Icon menu</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-hidden.html">Sidebar Hidden</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-hidden-overlay.html">Sidebar Overlay</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-fixed.html">Sidebar Fixed</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ url('webUserView') }}">View</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/layout/sidebar-hidden.html">Edit</a></li>
           </ul>
         </div>
       </li>
+
+
+
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="far fa-compass menu-icon"></i>
-          <span class="menu-title">Basic UI Elements</span>
+          <span class="menu-title">Employ Control</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.html">Accordions</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Badges</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/modals.html">Modals</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/progress.html">Progress bar</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/pagination.html">Pagination</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/tabs.html">Tabs</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/tooltips.html">Tooltips</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('createEmploy')}}">Create</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('listEmploy')}}">Employ List</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Assign</a></li>
           </ul>
           </div>
       </li>
+
+
+
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
           <i class="fas fa-clipboard-list menu-icon"></i>
-          <span class="menu-title">Advanced Elements</span>
+          <span class="menu-title">Loan Application Control </span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="ui-advanced">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dragula.html">Dragula</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('user_view')}}">User View</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/clipboard.html">Clipboard</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/context-menu.html">Context menu</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/slider.html">Sliders</a></li>
