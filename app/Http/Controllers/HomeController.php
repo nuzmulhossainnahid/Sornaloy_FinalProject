@@ -136,7 +136,7 @@ class HomeController extends Controller
             $data['image']= $filename;
         }
         $data->save();
-        return 'Request Send';
+
     }
 
     public function app()

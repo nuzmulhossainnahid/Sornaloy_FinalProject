@@ -38,6 +38,6 @@ class ApplicationController extends Controller
             $data['photo']= $filename;
         }
         $data->save();
-        return 'Request Send';
+        return view('user.apply_loan.secdule');
     }
 }

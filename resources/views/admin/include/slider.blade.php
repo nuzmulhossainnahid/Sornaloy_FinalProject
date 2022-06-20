@@ -4,8 +4,8 @@
 
       <li class="nav-item">
         <a class="nav-link" href="">
-          <i class="fa fa-home menu-icon"></i>
-          <span class="menu-title">Home Layout</span>
+          {{--<i class="fa fa-home menu-icon"></i>--}}
+          <span class="menu-title"style="font-weight: bold;">Home Layout</span>
         </a>
       </li>
       {{-- <li class="nav-item">
@@ -32,8 +32,8 @@
 
       <li class="nav-item">
         <a class="nav-link" href="">
-          <i class="fa fa-home menu-icon"></i>
-          <span class="menu-title">User Control</span>
+          {{--<i class="fa fa-home menu-icon"></i>--}}
+          <span class="menu-title"style="font-weight: bold;">User Control</span>
         </a>
       </li>
 
@@ -90,31 +90,41 @@
           </ul>
         </div>
       </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <span class="menu-title" style="font-weight: bold;">Appointment Control</span>
+        </a>
+      </li>
+
+
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
           <i class="fab fa-wpforms menu-icon"></i>
-          <span class="menu-title">Form elements</span>
+          <span class="menu-title">Create Appointment</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="form-elements">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/advanced_elements.html">Advanced Elements</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/validation.html">Validation</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/wizard.html">Wizard</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('bank_app')}}">Create Bank </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('bank_app')}}">Show Bank</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Crate Doorstep</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Show Doorstep</a></li>
           </ul>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#editors" aria-expanded="false" aria-controls="editors">
           <i class="fas fa-pen-square menu-icon"></i>
-          <span class="menu-title">Editors</span>
+          <span class="menu-title">Schedule Control</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="editors">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="pages/forms/text_editor.html">Text editors</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/forms/code_editor.html">Code editors</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('create_schedule')}}">Create Schedule</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('show_schedule')}}">Show Schedule</a></li>
           </ul>
         </div>
       </li>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DynamicDependent;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +65,7 @@ Route::get('/delete_employ/{id}', [AdminController::class,'delete_employ']);
 
 Route::post('/edit_employ_user/{id}', [AdminController::class,'edit_employ_user']);
 
+Route::get('/list_bankSchedule', [AdminController::class,'list_bankSchedule']);
 
 //User View
 
@@ -73,6 +76,24 @@ Route::get('/user_view', [AdminController::class,'user_view']);
 
 //Application
 Route::post('/application', [ApplicationController::class,'application']);
+
+//Appointment
+
+Route::get('/bank_app', [AppointmentController::class,'bank_app']);
+
+Route::post('/bank_app_from', [AppointmentController::class,'bank_app_from']);
+Route::get('/create_schedule', [AppointmentController::class,'create_schedule']);
+Route::get('/schedule_bank_create', [AppointmentController::class,'schedule_bank_create']);
+Route::get('/schedule_bank_branch/{bankName}', [AppointmentController::class,'schedule_bank_branch']);
+Route::post('schedule_bank_branch/fetch', 'AppointmentController@fetch')->name('schedule_bank_branch.fetch');
+
+
+Route::post('/Crete_schedule_bank_from', [AppointmentController::class,'Crete_schedule_bank_from']);
+Route::post('/schedulfrom_bank', [AppointmentController::class,'schedulfrom_bank']);
+Route::get('/list_bankSchedule', [AppointmentController::class,'list_bankSchedule']);
+Route::get('/show_schedule', [AppointmentController::class,'show_schedule']);
+Route::get('/schedule_bank_show', [AppointmentController::class,'schedule_bank_show']);
+
 
 
 
