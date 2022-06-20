@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\BankSechedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class ApplicationController extends Controller
@@ -14,6 +15,8 @@ class ApplicationController extends Controller
         {
             $data->userId= Auth::user()->id;
         }
+
+        $userId =$data->userId;
         $data->name = $request->name;
         $data->fatherHusbandName = $request->fatherHusbandName;
         $data->motherName = $request->motherName;
@@ -38,6 +41,19 @@ class ApplicationController extends Controller
             $data['photo']= $filename;
         }
         $data->save();
-        return view('user.apply_loan.secdule');
+        return view('user.apply_loan.secdule',compact('userId'));
+    }
+
+    public function apply_bank_home()
+    {
+        $UserId= Auth::user()->id;
+
+        $data = Application:: where('UserId', '=', $UserId)
+            ->get();
+
+        $sec = BankSechedule::where('condition', '=', 0)
+            ->get();
+
+        return view('user.apply_loan.secdule_bank',compact('sec'));
     }
 }

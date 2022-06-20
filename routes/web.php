@@ -44,7 +44,7 @@ Route::get('/apply_loan', [HomeController::class,'apply_loan']);
 
 Route::post('/apply_loan_customer', [HomeController::class,'apply_loan_customer']);
 Route::post('/apply_loan_request', [HomeController::class,'apply_loan_request']);
-
+//
 
 
 
@@ -76,6 +76,10 @@ Route::get('/user_view', [AdminController::class,'user_view']);
 
 //Application
 Route::post('/application', [ApplicationController::class,'application']);
+//Apply Bank
+Route::get('/apply_bank_home', [ApplicationController::class,'apply_bank_home']);
+
+
 
 //Appointment
 

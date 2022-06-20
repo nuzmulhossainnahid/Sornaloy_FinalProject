@@ -20,15 +20,11 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="page-header">
-                    <h3 class="page-title">
-                        Data table
-                    </h3>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Data table</li>
-                        </ol>
-                    </nav>
+                    <a href="{{url('schedule_bank_create')}}">
+                        <h3 class="page-title btn btn-outline-success" >
+                            Add New
+                        </h3>
+                    </a>
                 </div>
                 <div class="card">
                     <div class="card-body">

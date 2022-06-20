@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bank;
 use App\Models\BankSechedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class AppointmentController extends Controller
@@ -66,6 +67,7 @@ class AppointmentController extends Controller
     public function list_bankSchedule()
     {
 
+        BankSechedule::where('date','<',Carbon::now())->delete();
         $data = DB::table("bank_sechedules")
             ->orderBy(DB::raw("DATE_FORMAT(date,'%Y-%M-%D')"), 'ASC')
             ->get();
