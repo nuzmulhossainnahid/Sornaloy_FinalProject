@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('date')->nullable();
             $table->string('time')->nullable();
-            $table->string('condition')->nullable();
+            $table->string('condition')->default(0);
             $table->timestamps();
         });
     }

@@ -12,13 +12,15 @@
     <div class="card mb-3">
 
         <div class="card-body">
-            <h4 class="card-title" style="font-size: xx-large;font-weight: bold">Available Date</h4>
-            <form class="forms-sample" action="{{url('find_bank_branch')}}" method="POST" enctype="multipart/form-data">
+            <h4 class="card-title" style="font-size: xx-large;font-weight: bold">Available Bank</h4>
+            <h4 class="card-title" style="font-size: larger;font-weight: bold">Date: {{$date}}</h4>
+            <form class="forms-sample" action="{{url('bank_branch_time')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <select class="form-control" name="date" id="exampleFormControlSelect2">
+                    <input type="hidden" name="date"value="{{$date}}">
+                    <select class="form-control" name="bankName" id="exampleFormControlSelect2">
                         @foreach ($data as $data)
-                            <option value="{{$data->date}}">{{$data->date}}</option>
+                            <option value="{{$data->bankName}}">{{$data->bankName}}</option>
                         @endforeach
                     </select>
                 </div>

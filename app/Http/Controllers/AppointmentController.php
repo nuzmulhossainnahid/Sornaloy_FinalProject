@@ -59,7 +59,6 @@ class AppointmentController extends Controller
         $data->address=$request->address;
         $data->date=$request->date;
         $data->time=$request->time;
-        $data->condition=$request->condition;
         $data->save();
         return redirect('list_bankSchedule');
     }

@@ -79,7 +79,9 @@ Route::post('/application', [ApplicationController::class,'application']);
 //Apply Bank
 Route::get('/apply_bank_home', [ApplicationController::class,'apply_bank_home']);
 
+Route::post('/find_bank_branch', [ApplicationController::class,'find_bank_branch']);
 
+Route::post('/bank_branch_time', [ApplicationController::class,'bank_branch_time']);
 
 //Appointment
 

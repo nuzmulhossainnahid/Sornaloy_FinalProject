@@ -6,6 +6,8 @@ use App\Models\Application;
 use App\Models\BankSechedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class ApplicationController extends Controller
 {
     public function application(Request $request)
@@ -46,14 +48,30 @@ class ApplicationController extends Controller
 
     public function apply_bank_home()
     {
-        $UserId= Auth::user()->id;
-
-        $data = Application:: where('UserId', '=', $UserId)
+        $data = BankSechedule::where('condition', '=', 0)
+            ->select('date', DB::raw('count(*) as total'))
+            ->groupBy('date')
             ->get();
 
-        $sec = BankSechedule::where('condition', '=', 0)
-            ->get();
+        return view('user.apply_loan.secdule_bank',compact('data'));
+    }
 
-        return view('user.apply_loan.secdule_bank',compact('sec'));
+    public function find_bank_branch(Request $request)
+    {
+        $date = $request->date;
+        $data = BankSechedule::where('date', '=', $request->date)
+            ->select('bankName', DB::raw('count(*) as total'))
+            ->groupBy('bankName')
+            ->get();
+        return view('user.apply_loan.find_bank_branch',compact('data','date'));
+    }
+
+    public function bank_branch_time(Request $request)
+    {
+        $data = BankSechedule::where('condition', '=', 0)
+            ->where('date', '=', $request->date)
+            ->where('bankName', '=', $request->bankName)
+            ->get();
+        return $data;
     }
 }
