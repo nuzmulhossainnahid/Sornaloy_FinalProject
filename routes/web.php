@@ -83,6 +83,8 @@ Route::post('/find_bank_branch', [ApplicationController::class,'find_bank_branch
 
 Route::post('/bank_branch_time', [ApplicationController::class,'bank_branch_time']);
 
+Route::get('/submit_bank_secdule/{id}', [ApplicationController::class,'submit_bank_secdule']);
+
 //Appointment
 
 Route::get('/bank_app', [AppointmentController::class,'bank_app']);
@@ -100,7 +102,8 @@ Route::get('/list_bankSchedule', [AppointmentController::class,'list_bankSchedul
 Route::get('/show_schedule', [AppointmentController::class,'show_schedule']);
 Route::get('/schedule_bank_show', [AppointmentController::class,'schedule_bank_show']);
 
-
+//Your Request
+Route::get('/your_request', [HomeController::class,'your_request']);
 
 
 Route::middleware([

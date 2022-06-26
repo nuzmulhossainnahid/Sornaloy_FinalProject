@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bank;
 use App\Models\BankSechedule;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -47,7 +48,8 @@ class AppointmentController extends Controller
         $data = Bank::select('*')
             ->where('bankName', '=', $request->bankName)
             ->get();
-        return view('admin.appointment.create_schedule_bank_view',compact('data','bankName'));
+        $Assign_Employ = User::where('usertype', '=', 2)->get();
+        return view('admin.appointment.create_schedule_bank_view',compact('data','bankName','Assign_Employ'));
     }
 
     public function schedulfrom_bank(Request $request)
@@ -59,6 +61,7 @@ class AppointmentController extends Controller
         $data->address=$request->address;
         $data->date=$request->date;
         $data->time=$request->time;
+        $data->Assign_Employ=$request->Assign_Employ;
         $data->save();
         return redirect('list_bankSchedule');
     }

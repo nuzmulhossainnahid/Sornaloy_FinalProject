@@ -127,7 +127,7 @@
               @auth
 
               <li class="nav-item">
-                <a class="nav-link fw-bolder" href="{{ url('request') }}">Your Request</a>
+                <a class="nav-link fw-bolder" href="{{ url('your_request') }}">Your Request</a>
               </li>
 
               <li class="nav-item" >

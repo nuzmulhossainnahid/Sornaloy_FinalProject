@@ -92,6 +92,23 @@
                             </div>
 
 
+
+                            <div class="form-group">
+                                <label for="exampleInputName1"  style="font-weight: bold" style="font-weight: bold">Assign Employ</label>
+                                <select class="form-control" name="Assign_Employ" id="exampleFormControlSelect2">
+
+                                    @foreach($Assign_Employ as $Assign_Employ)
+                                    <option value="{{$Assign_Employ->id}}">{{$Assign_Employ->id}} -- {{$Assign_Employ->name}}</option>
+                                    @endforeach
+
+
+                                </select>
+
+                            </div>
+
+
+
+
                             {{--<div class="form-group">--}}
                             {{--<label for="exampleInputEmail3" style="font-weight: bold">Branch</label>--}}
 

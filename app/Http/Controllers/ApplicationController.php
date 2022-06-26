@@ -68,10 +68,30 @@ class ApplicationController extends Controller
 
     public function bank_branch_time(Request $request)
     {
+        $date = $request->date;
+        $bankName = $request->bankName;
+
         $data = BankSechedule::where('condition', '=', 0)
             ->where('date', '=', $request->date)
             ->where('bankName', '=', $request->bankName)
             ->get();
-        return $data;
+        return view('user.apply_loan.bank_appoint_from',compact('data','date','bankName'));
+    }
+
+    public function submit_bank_secdule($id)
+    {
+        if(Auth::id())
+        {
+            $user= Auth::user()->id;
+        }
+        $data = Application::where('userId', '=', $user)->get();
+
+        $data = BankSechedule::find($id);
+        $data->condition = $user;
+        $data->save();
+
+        return redirect('your_request');
+
+
     }
 }

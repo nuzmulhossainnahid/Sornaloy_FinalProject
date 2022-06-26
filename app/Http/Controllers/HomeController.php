@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Application;
+use App\Models\BankSechedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,7 +67,19 @@ class HomeController extends Controller
     public function apply_loan()
     {
 
-        return view('user.apply_loan.apply_loan');
+//        if(Auth::id())
+//        {
+//            $userId= Auth::user()->id;
+//            $data = Application::where('userId', '=', $userId)->get();
+//        }
+//        if($data)
+//        {
+//            return view('user.apply_loan.secdule',compact('userId'));
+//        }
+            return view('user.apply_loan.apply_loan');
+
+
+
     }
 
     public function apply_loan_customer(Request $request)
@@ -142,5 +156,20 @@ class HomeController extends Controller
     public function app()
     {
         return view('user.howToApply.apply');
+    }
+
+
+
+    //Your Request
+
+    public function your_request()
+    {
+        if(Auth::id())
+        {
+            $user= Auth::user()->id;
+        }
+        $data = BankSechedule::where('condition', '=', $user)
+        ->get();
+        return view('user.yourRequest.request',compact('data'));
     }
 }
